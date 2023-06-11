@@ -4,13 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
 <body>
     <div id ="usercards">
-
     </div>
+    <form action="" id="input-form">
+        <input placeholder="ID" id="inputId" type="text">
+        <input placeholder="PostID" id="inputPostId" type="text">
+        <input placeholder="Name" id="inputName" type="text">
+        <input placeholder="Email" id="inputEmail" type="text">
+        <textarea placeholder="body" id="inputBody" name="body"></textarea>
+        <button type="submit" for="inputId inputPostId inputName inputEmail inputBody"></button>
+    </form>
     <script>
+        const id = document.getElementById('inputId').value;
+        const postId = document.getElementById('inputPostId').value;
+        const firstName = document.getElementById('inputName').value;
+        const email = document.getElementById('inputEmail').value;
+        const body = document.getElementById('inputBody').value;
         const cards = [
                 {
                     postId: 1,
@@ -48,6 +61,8 @@
                     body: "harum non quasi et ratione\ntempore iure ex voluptates in ratione\nharum architecto fugit inventore cupiditate\nvoluptates magni quo et"
                 }
             ]
+            
+            cards.push(newCard);
             const userCards = document.getElementById('usercards')
             for (let i = 0; i < cards.length; i++) {
                 const userCard = document.createElement('div')
@@ -68,9 +83,18 @@
                 const aboutMe = document.createElement('p')
                 aboutMe.textContent = cards[i].body
                 userCard.appendChild(aboutMe)
+                const removeButton = document.createElement('button')
+                    removeButton.addEventListener('click', () => {
+                        userCard.remove();
+                        removeButton.remove();
+                    });
+                userCard.appendChild(removeButton)
+                removeButton.style.width = "20px",
+                removeButton.style.height = "15px",
 
                 userCards.appendChild(userCard)
             }
+        //     form.reset();
     </script>
 </body>
 </html>
