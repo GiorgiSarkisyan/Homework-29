@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <input id="inputSelector" type="text">
+    <button id="btn">click</button>
+    <ul id="user-list"></ul>
+
+
+    <script>
+
+        // 5. რთული დამატებითი დავალება
+        // html შექმენით <div id="user-list"></div> გამოიყენეთ მიმაგრებული სურათი (hiok.png) დიზაინის ასაწყობად,
+
+
+
+        const users = [
+            {
+                id: 7,
+                email: "michael.lawson@reqres.in",
+                first_name: "Michael",
+                last_name: "Lawson",
+                avatar: "https://i.ytimg.com/vi/VEx5hNYeZtY/hqdefault.jpg"
+            },
+            {
+                id: 8,
+                email: "lindsay.ferguson@reqres.in",
+                first_name: "Lindsay",
+                last_name: "Ferguson",
+                avatar: "https://i.ytimg.com/vi/VEx5hNYeZtY/hqdefault.jpg"
+            },
+            {
+                id: 9,
+                email: "tobias.funke@reqres.in",
+                first_name: "Tobias",
+                last_name: "Funke",
+                avatar: "https://i.ytimg.com/vi/VEx5hNYeZtY/hqdefault.jpg"
+            },
+            {
+                id: 10,
+                email: "byron.fields@reqres.in",
+                first_name: "Byron",
+                last_name: "Fields",
+                avatar: "https://i.ytimg.com/vi/VEx5hNYeZtY/hqdefault.jpg"
+            },
+            {
+                id: 11,
+                email: "george.edwards@reqres.in",
+                first_name: "George",
+                last_name: "Edwards",
+                avatar: "https://i.ytimg.com/vi/VEx5hNYeZtY/hqdefault.jpg"
+            },
+            {
+                id: 12,
+                email: "rachel.howell@reqres.in",
+                first_name: "Rachel",
+                last_name: "Howell",
+                avatar: "https://i.ytimg.com/vi/VEx5hNYeZtY/hqdefault.jpg"
+            }, {
+                id: 11,
+                email: "george.edwards@reqres.in",
+                first_name: "George",
+                last_name: "Edwards",
+                avatar: "https://i.ytimg.com/vi/VEx5hNYeZtY/hqdefault.jpg"
+            },
+            {
+                id: 12,
+                email: "rachel.howell@reqres.in",
+                first_name: "Rachel",
+                last_name: "Howell",
+                avatar: "https://i.ytimg.com/vi/VEx5hNYeZtY/hqdefault.jpg"
+            }, {
+                id: 11,
+                email: "george.edwards@reqres.in",
+                first_name: "George",
+                last_name: "Edwards",
+                avatar: "https://i.ytimg.com/vi/VEx5hNYeZtY/hqdefault.jpg"
+            },
+            {
+                id: 12,
+                email: "rachel.howell@reqres.in",
+                first_name: "Rachel",
+                last_name: "Howell",
+                avatar: "https://i.ytimg.com/vi/VEx5hNYeZtY/hqdefault.jpg"
+            }, {
+                id: 11,
+                email: "george.edwards@reqres.in",
+                first_name: "George",
+                last_name: "Edwards",
+                avatar: "https://i.ytimg.com/vi/VEx5hNYeZtY/hqdefault.jpg"
+            },
+            {
+                id: 12,
+                email: "rachel.howell@reqres.in",
+                first_name: "Rachel",
+                last_name: "Howell",
+                avatar: "https://i.ytimg.com/vi/VEx5hNYeZtY/hqdefault.jpg"
+            }, {
+                id: 11,
+                email: "george.edwards@reqres.in",
+                first_name: "George",
+                last_name: "Edwards",
+                avatar: "https://i.ytimg.com/vi/VEx5hNYeZtY/hqdefault.jpg"
+            },
+            {
+                id: 12,
+                email: "rachel.howell@reqres.in",
+                first_name: "Rachel",
+                last_name: "Howell",
+                avatar: "https://i.ytimg.com/vi/VEx5hNYeZtY/hqdefault.jpg"
+            }, {
+                id: 11,
+                email: "george.edwards@reqres.in",
+                first_name: "George",
+                last_name: "Edwards",
+                avatar: "https://i.ytimg.com/vi/VEx5hNYeZtY/hqdefault.jpg"
+            },
+            {
+                id: 12,
+                email: "rachel.howell@reqres.in",
+                first_name: "Rachel",
+                last_name: "Howell",
+                avatar: "https://i.ytimg.com/vi/VEx5hNYeZtY/hqdefault.jpg"
+            }, {
+                id: 11,
+                email: "george.edwards@reqres.in",
+                first_name: "George",
+                last_name: "Edwards",
+                avatar: "https://i.ytimg.com/vi/VEx5hNYeZtY/hqdefault.jpg"
+            },
+            {
+                id: 12,
+                email: "rachel.howell@reqres.in",
+                first_name: "Rachel",
+                last_name: "Howell",
+                avatar: "https://i.ytimg.com/vi/VEx5hNYeZtY/hqdefault.jpg"
+            }
+
+
+        ];
+
+        const userList = document.getElementById('user-list')
+        for (let i = 0; i < users.length; i++) {
+
+            const userCard = document.createElement('li')
+            userCard.classList.add('user-card')
+
+            const img = document.createElement('img')
+            img.setAttribute('src', users[i].avatar)
+            userCard.appendChild(img)
+
+            const fullName = document.createElement('p')
+            fullName.textContent = `${users[i].first_name}  ${users[i].last_name}`
+            userCard.appendChild(fullName)
+
+
+            const info = document.createElement('p')
+            info.textContent = 'info'
+            userCard.appendChild(info)
+
+            info.addEventListener('click', () => {
+
+                const email = document.createElement('p')
+                email.textContent = users[i].email
+                email.classList.add('email')
+                userCard.appendChild(email)
+
+            })
+
+
+            userList.appendChild(userCard)
+
+
+        }
