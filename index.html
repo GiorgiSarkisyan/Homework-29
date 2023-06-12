@@ -8,6 +8,23 @@
     <title>Document</title>
 </head>
 <body>
+    <header>
+        <button>
+            sign up
+        </button>
+        </button id="signIn">
+            sign in
+        </button>
+    </header>
+    <div id="modal">
+       <form>
+           <input type="text" placeholder="password">
+           <button id="close">
+               close
+           </button>
+       </form>
+           
+    </div>
     <div id ="usercards">
     </div>
     <form action="" id="input-form">
@@ -19,6 +36,17 @@
         <button type="submit" for="inputId inputPostId inputName inputEmail inputBody"></button>
     </form>
     <script>
+        const modal = document.getElementById("modal")
+        const close = document.getElementById("close")
+        modal.style.display = "none";
+        const signIn = document.getElementById("signIn")
+        signIn.addEventListener("click", () => {
+            modal.style.display = "block",
+               }),
+        close.addEventListener("click", () => {
+            modal.style.display = "none",
+}),
+
         cards = [
                 {
                     postId: 1,
